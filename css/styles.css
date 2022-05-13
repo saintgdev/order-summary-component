@@ -1,8 +1,9 @@
 :root{
   --Pale-blue: hsl(225, 100%, 94%);
   --Bright-blue: hsl(245, 75%, 52%);
-  --White: hsl(0, 0%, 100%);
-  --hover-btn-color: #766BF1;
+  --White: hsl(0, 0%, 98%);
+  --Hover-Card-Action: hsl(245, 83%, 68%);
+  --Shadow-Card: hsla(223, 47%, 23%, 0.095);
 
   --Very-pale-blue: hsl(225, 100%, 98%);
   --Desaturated-blue: hsl(224, 23%, 55%);
@@ -15,30 +16,47 @@
 }
 body{
   margin: 0;
+  min-height: 100vh;
   padding: 0 5%;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    url(../images/pattern-background-mobile.svg)
+   -14% 0 / contain  /*Position and size*/
+   no-repeat 
+   fixed  /*attachment*/
+  ;
   background-color: var(--Pale-blue);
 }
 button{
   border: none;
   cursor: pointer;
 }
+
+/* Container all Cards */
 .card-container{
-  margin: 3.5em 0;
+  max-width: 25em;
+  padding: 2em 0;
 }
+
+/* Container Card */
 .card-summary{
   border-radius: 1em;
   overflow: hidden;
   background-color: var(--White);
+  box-shadow: 0 1em 1em rgba(31, 47, 86, 0.095);
 }
+/* Hero Card */
 .card-summary__cover > img{
   width: 100%;
 }
 
-/*  */
+/* Container text of card */
 .card-info{
-  padding: 2em 1.45em 1.7em;
+  padding: 2em calc(1.25em + 1vmin);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -50,13 +68,13 @@ button{
   color: var(--Dark-blue);
 }
 .card-info__desc{
-  margin: 1.3em 0;
-  padding: 0 .5em;
+  margin: 1.2em 0;
+  padding: 0 calc(.5em + 1vmin);
   line-height: 1.6;
   color: var(--Desaturated-blue);
 }
 
-/*  */
+
 .card-plan{
   width: 100%;
   padding: .95em;
@@ -79,11 +97,12 @@ button{
   color: var(--Desaturated-blue);
 }
 
-/*  */
+
 .btn-change,
 .btn-cancel{
   background: none;
 }
+
 /* Styles from button change  */
 .btn-change{
   text-decoration: underline;
@@ -94,7 +113,7 @@ button{
 .btn-change:hover{
   text-decoration: none;
   transition-duration: color .3s;
-  color: var(--hover-btn-color);
+  color: var(--Hover-Card-Action);
 }
 
 /* Styles from button cancel  */
@@ -120,5 +139,36 @@ button{
 }
 .btn-pay:hover{
   transition: background-color .3s;
-  background-color: var(--hover-btn-color);
+  background-color: var(--Hover-Card-Action);
+}
+
+.attribution{
+  padding: 2em 0 0;
+  font-size: .8em;
+  line-height: 1.5;
+  color: var(--Desaturated-blue);
+  text-align: center;
+}
+.attribution > a{
+  font-weight: 700;
+  color: var(--Dark-blue);
+}
+
+/* Breakpoints */
+@media (min-width: 400px){
+  .card-info{
+    padding: 2em calc(1.25em + 2vmin);
+  }
+}
+@media (min-width: 600px){
+  body{
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-position: 0 calc(-3em + 3vmin);
+  }
+}
+@media (min-width: 1000px){
+  body{
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-position: 0 calc(-6em + 3vmin);
+  }
 }
