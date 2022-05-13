@@ -4,10 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Frontend Mentor | Order summary card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>New Project</h1>
+  <div class="card-container">
+    <div class="card-summary">
+      <div class="card-summary__cover">
+        <img src="images/illustration-hero.svg" alt="illustration-hero">
+      </div>
+  
+      <div class="card-info">
+        <h2 class="card-info__title">Order Summary</h2>
+        <p class="card-info__desc">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+  
+        <div class="card-plan">
+          <img src="images/icon-music.svg" alt="icon-musi" class="card-plan__icon">
+          <p class="card-plan__price">Annual Plan <br> <span>$59.99/year</span></p>
+          <button class="btn-none btn-change">Change</button>
+        </div>
+  
+        <button class="btn-pay">Proceed to Payment</button>
+        <button class="btn-none btn-cancel">Cancel Order</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

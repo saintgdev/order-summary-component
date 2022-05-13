@@ -1,3 +1,13 @@
+:root{
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+  --White: hsl(0, 0%, 100%);
+  --hover-btn-color: #766BF1;
+
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Desaturated-blue: hsl(224, 23%, 55%);
+  --Dark-blue: hsl(223, 47%, 23%);
+}
 *,
 *::before,
 *::after{
@@ -5,4 +15,110 @@
 }
 body{
   margin: 0;
+  padding: 0 5%;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 500;
+  background-color: var(--Pale-blue);
+}
+button{
+  border: none;
+  cursor: pointer;
+}
+.card-container{
+  margin: 3.5em 0;
+}
+.card-summary{
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: var(--White);
+}
+.card-summary__cover > img{
+  width: 100%;
+}
+
+/*  */
+.card-info{
+  padding: 2em 1.45em 1.7em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-info__title{
+  margin: 0;
+  font-weight: 900;
+  color: var(--Dark-blue);
+}
+.card-info__desc{
+  margin: 1.3em 0;
+  padding: 0 .5em;
+  line-height: 1.6;
+  color: var(--Desaturated-blue);
+}
+
+/*  */
+.card-plan{
+  width: 100%;
+  padding: .95em;
+  margin-bottom: 1.3em;
+  border-radius: .6em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  background-color: var(--Very-pale-blue);
+}
+.card-plan__price{
+  margin: 0;
+  margin-left: 1em;
+  text-align: left;
+  font-weight: 700;
+  color: var(--Dark-blue);
+}
+.card-plan__price > span{
+  font-weight: 500;
+  color: var(--Desaturated-blue);
+}
+
+/*  */
+.btn-change,
+.btn-cancel{
+  background: none;
+}
+/* Styles from button change  */
+.btn-change{
+  text-decoration: underline;
+  font-size: .85em;
+  font-weight: 700;
+  color: var(--Bright-blue);
+}
+.btn-change:hover{
+  text-decoration: none;
+  transition-duration: color .3s;
+  color: var(--hover-btn-color);
+}
+
+/* Styles from button cancel  */
+.btn-cancel{
+  font-weight: 700;
+  transition: color .3s;
+  color: var(--Desaturated-blue);
+}
+.btn-cancel:hover{
+  color: var(--Dark-blue);
+}
+
+/* Styles from button pay  */
+.btn-pay{
+  width: 100%;
+  padding: 1em 0;
+  margin-bottom: 1.6em;
+  border-radius: .6em;
+  font-weight: 700;
+  color: var(--White);
+  background-color: var(--Bright-blue);
+  box-shadow: 0 .6em 1em hsla(245, 75%, 52%, 0.303);
+}
+.btn-pay:hover{
+  transition: background-color .3s;
+  background-color: var(--hover-btn-color);
 }
